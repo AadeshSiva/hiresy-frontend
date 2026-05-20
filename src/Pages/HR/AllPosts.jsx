@@ -9,8 +9,7 @@ import { useLocation } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 
 import EvalPanel from "./Evalpanel.jsx";
-import RoundsPerformance from "./RoundsPerformance.jsx";
-
+import RoundsPerformance from "./Roundsperformance.jsx";
 export default function AllPosts() {
 
     const location = useLocation();
