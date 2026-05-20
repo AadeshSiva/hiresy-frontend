@@ -1,0 +1,703 @@
+/* ═══════════════════════════════════════════════
+   Offer.css  —  Hiersy Offer Letter + E-Sign
+   Aesthetic: Refined legal document. 
+   Cream paper, deep navy, gold accents.
+   Font pairing: Cormorant Garamond (display) + DM Sans (body)
+═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ── Variables ── */
+:root {
+    --offer-cream: #faf8f3;
+    --offer-parchment: #f2ede2;
+    --offer-navy: #1a1a2e;
+    --offer-navy-mid: #2d2d4e;
+    --offer-gold: #b89a5a;
+    --offer-gold-lt: #d4b97a;
+    --offer-ink: #2a2a3a;
+    --offer-muted: #7a7a8a;
+    --offer-rule: #d8d0be;
+    --offer-shadow: rgba(26, 26, 46, 0.12);
+    --offer-radius: 3px;
+}
+
+/* ── Shell ── */
+.offer-shell {
+    min-height: 100vh;
+    background: var(--offer-parchment);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 48px 20px 80px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Ambient blobs ── */
+.offer-bg-blob {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.offer-bg-blob.b1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(184, 154, 90, 0.12) 0%, transparent 70%);
+    top: -150px;
+    left: -150px;
+}
+
+.offer-bg-blob.b2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(26, 26, 46, 0.07) 0%, transparent 70%);
+    bottom: -100px;
+    right: -100px;
+}
+
+/* ── Document ── */
+.offer-doc {
+    position: relative;
+    z-index: 1;
+    background: var(--offer-cream);
+    max-width: 780px;
+    width: 100%;
+    border: 1px solid var(--offer-rule);
+    box-shadow:
+        0 2px 6px var(--offer-shadow),
+        0 12px 40px rgba(26, 26, 46, 0.08),
+        0 0 0 6px var(--offer-parchment),
+        0 0 0 7px var(--offer-rule);
+    animation: offer-rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes offer-rise {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Header ── */
+.offer-header {
+    background: var(--offer-navy);
+    padding: 36px 52px 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(-45deg,
+            transparent,
+            transparent 12px,
+            rgba(255, 255, 255, 0.02) 12px,
+            rgba(255, 255, 255, 0.02) 13px);
+}
+
+.offer-wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    position: relative;
+}
+
+.offer-header-rule {
+    width: 48px;
+    height: 2px;
+    background: var(--offer-gold);
+    margin: 14px 0 12px;
+}
+
+.offer-header-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+/* ── Meta row ── */
+.offer-meta-row {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--offer-rule);
+}
+
+.offer-meta-item {
+    flex: 1;
+    padding: 18px 52px;
+    border-right: 1px solid var(--offer-rule);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.offer-meta-item:last-child {
+    border-right: none;
+}
+
+.offer-meta-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--offer-muted);
+}
+
+.offer-meta-val {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--offer-ink);
+}
+
+.offer-token {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+}
+
+.offer-badge {
+    display: inline-block;
+    background: #fff8e7;
+    color: #9a7830;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border: 1px solid #e8d89a;
+    border-radius: 20px;
+}
+
+/* ── Body ── */
+.offer-body {
+    padding: 44px 52px 36px;
+    color: var(--offer-ink);
+    line-height: 1.8;
+}
+
+.offer-body p {
+    margin: 0 0 20px;
+    font-size: 0.92rem;
+}
+
+.offer-salutation {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem !important;
+    font-weight: 500;
+    color: var(--offer-navy);
+    margin-bottom: 24px !important;
+}
+
+.offer-highlight {
+    color: var(--offer-gold);
+    font-style: italic;
+}
+
+/* ── Section titles ── */
+.offer-section-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--offer-navy);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 18px;
+}
+
+.offer-section-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--offer-gold);
+    letter-spacing: 0;
+}
+
+/* ── Terms ── */
+.offer-terms {
+    margin: 32px 0;
+    padding: 28px 32px;
+    background: #f7f4ee;
+    border: 1px solid var(--offer-rule);
+    border-left: 3px solid var(--offer-gold);
+}
+
+.offer-terms-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.offer-term-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--offer-rule);
+}
+
+.offer-term-row:last-child {
+    border-bottom: none;
+}
+
+.offer-term-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--offer-muted);
+    min-width: 160px;
+    flex-shrink: 0;
+}
+
+.offer-term-val {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--offer-navy);
+}
+
+/* ── Conditions ── */
+.offer-conditions {
+    margin: 32px 0;
+}
+
+.offer-cond-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.offer-cond-list li {
+    font-size: 0.88rem;
+    color: var(--offer-ink);
+    padding-left: 22px;
+    position: relative;
+    line-height: 1.65;
+}
+
+.offer-cond-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--offer-gold);
+    font-weight: 600;
+}
+
+/* ── Notes ── */
+.offer-notes {
+    margin: 32px 0;
+    padding: 20px 24px;
+    border: 1px solid var(--offer-rule);
+    background: #fdfcf8;
+}
+
+.offer-notes p {
+    font-size: 0.88rem;
+    color: var(--offer-muted);
+    margin: 0;
+    font-style: italic;
+}
+
+/* ── Closing / regards ── */
+.offer-closing {
+    margin-top: 32px !important;
+}
+
+.offer-regards {
+    margin-top: 28px !important;
+    font-size: 0.9rem !important;
+    line-height: 1.9 !important;
+}
+
+.offer-regards-sub {
+    font-size: 0.78rem;
+    color: var(--offer-muted);
+}
+
+/* ── Divider ── */
+.offer-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 52px;
+    margin: 8px 0;
+    color: var(--offer-muted);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.offer-divider::before,
+.offer-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--offer-rule);
+}
+
+/* ── Sign section ── */
+.offer-sign-section {
+    padding: 36px 52px 44px;
+}
+
+.offer-sign-instruction {
+    font-size: 0.85rem;
+    color: var(--offer-muted);
+    margin: 0 0 24px;
+    line-height: 1.6;
+}
+
+/* ── Canvas ── */
+.offer-canvas-wrap {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.offer-canvas-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--offer-muted);
+    margin-bottom: 10px;
+}
+
+.offer-canvas {
+    display: block;
+    width: 100%;
+    height: 180px;
+    background: #fff;
+    border: 1.5px solid var(--offer-rule);
+    border-radius: var(--offer-radius);
+    cursor: crosshair;
+    touch-action: none;
+    transition: border-color 0.2s;
+}
+
+.offer-canvas:hover {
+    border-color: var(--offer-gold);
+}
+
+.offer-canvas-baseline {
+    position: absolute;
+    bottom: 46px;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: repeating-linear-gradient(to right,
+            var(--offer-rule) 0px,
+            var(--offer-rule) 6px,
+            transparent 6px,
+            transparent 12px);
+    pointer-events: none;
+}
+
+.offer-canvas-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    justify-content: flex-end;
+}
+
+.offer-btn-ghost {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--offer-muted);
+    background: transparent;
+    border: 1px solid var(--offer-rule);
+    padding: 5px 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: all 0.18s;
+}
+
+.offer-btn-ghost:hover:not(:disabled) {
+    color: var(--offer-navy);
+    border-color: var(--offer-navy);
+}
+
+.offer-btn-ghost:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* ── Sign meta ── */
+.offer-sign-meta {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 28px;
+}
+
+.offer-sign-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* ── Primary button ── */
+.offer-btn-primary {
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px;
+    background: var(--offer-navy);
+    color: #fff;
+    border: none;
+    border-radius: var(--offer-radius);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(26, 26, 46, 0.25);
+}
+
+.offer-btn-primary:hover:not(.disabled) {
+    background: var(--offer-navy-mid);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 22px rgba(26, 26, 46, 0.3);
+}
+
+.offer-btn-primary:active:not(.disabled) {
+    transform: translateY(0);
+}
+
+.offer-btn-primary.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.offer-btn-spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: offer-spin 0.7s linear infinite;
+}
+
+@keyframes offer-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── Legal fine print ── */
+.offer-legal {
+    font-size: 0.72rem !important;
+    color: var(--offer-muted) !important;
+    margin-top: 16px !important;
+    text-align: center;
+    line-height: 1.6 !important;
+}
+
+/* ── Footer ── */
+.offer-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 52px;
+    border-top: 1px solid var(--offer-rule);
+    background: #f5f1e8;
+    font-size: 0.65rem;
+    color: var(--offer-muted);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+}
+
+/* ── Loader ── */
+.offer-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 120px;
+    color: var(--offer-muted);
+    font-size: 0.85rem;
+}
+
+.offer-loader-ring {
+    display: block;
+    width: 36px;
+    height: 36px;
+    border: 2.5px solid var(--offer-rule);
+    border-top-color: var(--offer-gold);
+    border-radius: 50%;
+    animation: offer-spin 0.8s linear infinite;
+}
+
+/* ── Error ── */
+.offer-error {
+    text-align: center;
+    padding-top: 100px;
+    color: var(--offer-ink);
+}
+
+.offer-error-icon {
+    display: block;
+    font-size: 2.5rem;
+    color: #c0392b;
+    margin-bottom: 16px;
+}
+
+.offer-error h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+}
+
+.offer-error p {
+    font-size: 0.88rem;
+    color: var(--offer-muted);
+}
+
+/* ── Done ── */
+.offer-done {
+    text-align: center;
+    padding-top: 100px;
+    max-width: 440px;
+    margin: 0 auto;
+    color: var(--offer-ink);
+}
+
+.offer-done-seal {
+    font-size: 3rem;
+    color: var(--offer-gold);
+    margin-bottom: 20px;
+    animation: offer-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes offer-pop {
+    from {
+        transform: scale(0.4);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.offer-done h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--offer-navy);
+    margin: 0 0 16px;
+}
+
+.offer-done p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--offer-ink);
+    margin: 0 0 20px;
+}
+
+.offer-done-sub {
+    font-size: 0.75rem;
+    color: var(--offer-muted);
+}
+
+/* ═══════════════
+   Responsive
+═══════════════ */
+@media (max-width: 640px) {
+    .offer-shell {
+        padding: 0 0 60px;
+    }
+
+    .offer-doc {
+        box-shadow: none;
+        border: none;
+        outline: none;
+    }
+
+    .offer-header {
+        padding: 28px 24px 24px;
+    }
+
+    .offer-wordmark {
+        font-size: 1.9rem;
+    }
+
+    .offer-meta-row {
+        flex-direction: column;
+    }
+
+    .offer-meta-item {
+        padding: 12px 24px;
+        border-right: none;
+        border-bottom: 1px solid var(--offer-rule);
+    }
+
+    .offer-body {
+        padding: 32px 24px 24px;
+    }
+
+    .offer-terms {
+        padding: 20px 18px;
+    }
+
+    .offer-term-row {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .offer-term-label {
+        min-width: auto;
+    }
+
+    .offer-divider {
+        padding: 0 24px;
+    }
+
+    .offer-sign-section {
+        padding: 28px 24px 36px;
+    }
+
+    .offer-footer {
+        padding: 14px 24px;
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .offer-sign-meta {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
