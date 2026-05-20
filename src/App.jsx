@@ -18,7 +18,7 @@ import JobApplication from './Pages/Candidate/JobApplication.jsx'
 
 import CodingTest from "./Codingtest/Codingtest.jsx";
 
-import TestPage from "./shortlistingtest/Testpage.jsx";
+import TestPage from "./Shortlistingtest/Testpage.jsx";
 import VerbalTest from "./Communicationtest/VerbalTest.jsx";
 import SpokenTest from "./Communicationtest/SpokenTest.jsx";
 
