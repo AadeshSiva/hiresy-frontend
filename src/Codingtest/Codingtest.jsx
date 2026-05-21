@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
-import "./CodingTest.css";
+import "./Codingtest.css";
 
 const API = "https://hiresy-coding.onrender.com";
 
