@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import "./VibeCoding.css";
+import "./Vibecoding.css";
 
 const API = "https://hiresy-test.onrender.com";
 

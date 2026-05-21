@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import "./Testpage.css";
-import VibeCoding from "./VibeCoding";
+import VibeCoding from "./Vibecoding.jsx";
 
 const API = "https://hiresy-test.onrender.com";
 
